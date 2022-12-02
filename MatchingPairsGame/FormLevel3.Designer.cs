@@ -85,7 +85,7 @@ namespace MatchingPairsGame
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 286F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 289F));
             this.tableLayoutPanel1.Controls.Add(this.label38, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label37, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label36, 0, 2);
@@ -133,7 +133,7 @@ namespace MatchingPairsGame
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1557, 1546);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1560, 1546);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label38
@@ -144,7 +144,7 @@ namespace MatchingPairsGame
             this.label38.Location = new System.Drawing.Point(1268, 1015);
             this.label38.Margin = new System.Windows.Forms.Padding(0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(286, 250);
+            this.label38.Size = new System.Drawing.Size(289, 250);
             this.label38.TabIndex = 35;
             this.label38.Text = "c";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -326,7 +326,7 @@ namespace MatchingPairsGame
             this.label24.Location = new System.Drawing.Point(1268, 1268);
             this.label24.Margin = new System.Windows.Forms.Padding(0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(286, 275);
+            this.label24.Size = new System.Drawing.Size(289, 275);
             this.label24.TabIndex = 21;
             this.label24.Text = "c";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -430,7 +430,7 @@ namespace MatchingPairsGame
             this.label14.Location = new System.Drawing.Point(1268, 762);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(286, 250);
+            this.label14.Size = new System.Drawing.Size(289, 250);
             this.label14.TabIndex = 13;
             this.label14.Text = "c";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -456,7 +456,7 @@ namespace MatchingPairsGame
             this.label12.Location = new System.Drawing.Point(1268, 509);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(286, 250);
+            this.label12.Size = new System.Drawing.Size(289, 250);
             this.label12.TabIndex = 11;
             this.label12.Text = "c";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -508,7 +508,7 @@ namespace MatchingPairsGame
             this.label8.Location = new System.Drawing.Point(1268, 256);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(286, 250);
+            this.label8.Size = new System.Drawing.Size(289, 250);
             this.label8.TabIndex = 7;
             this.label8.Text = "c";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -560,7 +560,7 @@ namespace MatchingPairsGame
             this.label4.Location = new System.Drawing.Point(1268, 3);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(286, 250);
+            this.label4.Size = new System.Drawing.Size(289, 250);
             this.label4.TabIndex = 3;
             this.label4.Text = "c";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -667,10 +667,11 @@ namespace MatchingPairsGame
             // 
             this.labelPeak.AutoSize = true;
             this.labelPeak.BackColor = System.Drawing.Color.Yellow;
+            this.labelPeak.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelPeak.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPeak.Location = new System.Drawing.Point(1448, 4);
             this.labelPeak.Name = "labelPeak";
-            this.labelPeak.Size = new System.Drawing.Size(88, 37);
+            this.labelPeak.Size = new System.Drawing.Size(90, 39);
             this.labelPeak.TabIndex = 8;
             this.labelPeak.Text = "Peek";
             this.labelPeak.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
