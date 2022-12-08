@@ -29,7 +29,6 @@ namespace MatchingPairsGame
             this.Hide();
             new FormLevel2().ShowDialog();
             this.Show();
-
         }
 
         private void ButtonLevel3_Click(object sender, EventArgs e)
