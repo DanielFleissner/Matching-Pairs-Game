@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MatchingPairsGame
 {
-    public partial class FormGameEntry : Form
+    public partial class LevelSelector : Form
     {
-        public FormGameEntry()
+        Profiles profiles;
+        Profiles.Profile profile; 
+        public LevelSelector(Profiles profiles, Profiles.Profile profile)
         {
             InitializeComponent();
+            this.profiles = profiles;
+            this.profile = profile;
+            LableUserName.Text = profile.Name;
         }
 
         private void ButtonLevel1_Click(object sender, EventArgs e)
@@ -36,6 +41,13 @@ namespace MatchingPairsGame
             this.Hide();
             new FormLevel3().ShowDialog();
             this.Show();
+        }
+
+        private void buttonLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Login(profiles).ShowDialog();
+            this.Close();
         }
     }
 }

@@ -12,12 +12,21 @@ namespace MatchingPairsGame
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            FormGameEntry a = new FormGameEntry();
-            a.ShowDialog();
+
+            Profiles profiles = JsonMethods.Profiles();
+
+            if (profiles.ProfileList.Count() == 0)
+            {
+                new CreateAccount(profiles).ShowDialog();
+            }
+            else
+            {
+                new Login(profiles).ShowDialog();
+            }
         }
     }
 }
