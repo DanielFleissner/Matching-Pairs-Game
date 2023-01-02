@@ -21,7 +21,7 @@ namespace MatchingPairsGame
 
             if (profiles.ProfileList.Count() == 0)
             {
-                new CreateAccount(profiles).ShowDialog();
+                new CreateProfile(profiles).ShowDialog();
             }
             else
             {

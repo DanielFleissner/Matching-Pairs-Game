@@ -20,24 +20,17 @@ namespace MatchingPairsGame
             this.profiles = profiles;
             foreach (Profiles.Profile profile in profiles.ProfileList)
             {
-                comboBoxSelectAccount.Items.Add(profile.Name);
+                comboBoxSelectProfile.Items.Add(profile.Name);
             }
-        }
-
-        private void buttonNewCreateAccount_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new CreateAccount(profiles).ShowDialog();
-            this.Close();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             Profiles.Profile profile;
             
-            if (comboBoxSelectAccount.SelectedItem == null)
+            if (comboBoxSelectProfile.SelectedItem == null)
             {
-                if (comboBoxSelectAccount.Text == "")
+                if (comboBoxSelectProfile.Text == "")
                 { 
                     MessageBox.Show("Please select a profile."); 
                 }
@@ -48,21 +41,49 @@ namespace MatchingPairsGame
             }
             else
             {   
-                string name = (string)comboBoxSelectAccount.SelectedItem;
-                if (profiles.Exists(name))
+                string name = (string)comboBoxSelectProfile.SelectedItem;
+                profile = profiles.Find(name);
+                this.Hide();
+                new LevelSelector(profiles, profile).ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void buttonDeleteProfile_Click(object sender, EventArgs e)
+        {
+            Profiles.Profile profile;
+
+            if (comboBoxSelectProfile.SelectedItem == null)
+            {
+                if (comboBoxSelectProfile.Text == "")
                 {
-                    profile = profiles.Find(name);
-                    this.Hide();
-                    new LevelSelector(profiles, profile).ShowDialog();
-                    this.Close();
+                    MessageBox.Show("Please select a profile.");
                 }
                 else
                 {
-                    MessageBox.Show("That profile does not exist. Please try enter the name again.");
+                    MessageBox.Show("That profile does not exit.");
                 }
-
             }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Do you want to delete this profile?", "Confirm Deletion", MessageBoxButtons.YesNo);
+                if(dialogResult == DialogResult.Yes)
+                {
+                    string name = (string)comboBoxSelectProfile.SelectedItem;
+                    profile = profiles.Find(name);
+                    profiles.Remove(profile);
+                    JsonMethods.UpdateSaveFile(profiles);
+                    comboBoxSelectProfile.Items.Remove(profile.Name);
+                    comboBoxSelectProfile.Text = "";
+                }
+            }
+        }
 
+        private void buttonCreateNewProfile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new CreateProfile(profiles).ShowDialog();
+            this.Close();
         }
     }
 }

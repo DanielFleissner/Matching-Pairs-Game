@@ -39,6 +39,9 @@ namespace MatchingPairsGame
             this.label2 = new System.Windows.Forms.Label();
             this.LableUserName = new System.Windows.Forms.Label();
             this.buttonLogOut = new System.Windows.Forms.Button();
+            this.labelLevel1TopScoreValue = new System.Windows.Forms.Label();
+            this.labelLevel2TopScoreValue = new System.Windows.Forms.Label();
+            this.labelLevel3TopScoreValue = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonLevel1
@@ -53,21 +56,23 @@ namespace MatchingPairsGame
             // 
             // buttonLevel2
             // 
+            this.buttonLevel2.Enabled = false;
             this.buttonLevel2.Location = new System.Drawing.Point(55, 207);
             this.buttonLevel2.Name = "buttonLevel2";
             this.buttonLevel2.Size = new System.Drawing.Size(307, 76);
             this.buttonLevel2.TabIndex = 1;
-            this.buttonLevel2.Text = "Level 2";
+            this.buttonLevel2.Text = "Level 2 (Locked)";
             this.buttonLevel2.UseVisualStyleBackColor = true;
             this.buttonLevel2.Click += new System.EventHandler(this.ButtonLevel2_Click);
             // 
             // buttonLevel3
             // 
+            this.buttonLevel3.Enabled = false;
             this.buttonLevel3.Location = new System.Drawing.Point(55, 311);
             this.buttonLevel3.Name = "buttonLevel3";
             this.buttonLevel3.Size = new System.Drawing.Size(307, 76);
             this.buttonLevel3.TabIndex = 2;
-            this.buttonLevel3.Text = "Level 3";
+            this.buttonLevel3.Text = "Level 3 (Locked)";
             this.buttonLevel3.UseVisualStyleBackColor = true;
             this.buttonLevel3.Click += new System.EventHandler(this.ButtonLevel3_Click);
             // 
@@ -83,7 +88,7 @@ namespace MatchingPairsGame
             // labelLevel1TopScore
             // 
             this.labelLevel1TopScore.AutoSize = true;
-            this.labelLevel1TopScore.Location = new System.Drawing.Point(459, 128);
+            this.labelLevel1TopScore.Location = new System.Drawing.Point(435, 113);
             this.labelLevel1TopScore.Name = "labelLevel1TopScore";
             this.labelLevel1TopScore.Size = new System.Drawing.Size(177, 25);
             this.labelLevel1TopScore.TabIndex = 4;
@@ -92,7 +97,7 @@ namespace MatchingPairsGame
             // labelLevel2TopScore
             // 
             this.labelLevel2TopScore.AutoSize = true;
-            this.labelLevel2TopScore.Location = new System.Drawing.Point(459, 233);
+            this.labelLevel2TopScore.Location = new System.Drawing.Point(435, 218);
             this.labelLevel2TopScore.Name = "labelLevel2TopScore";
             this.labelLevel2TopScore.Size = new System.Drawing.Size(177, 25);
             this.labelLevel2TopScore.TabIndex = 5;
@@ -101,11 +106,11 @@ namespace MatchingPairsGame
             // labelLevel3TopScore
             // 
             this.labelLevel3TopScore.AutoSize = true;
-            this.labelLevel3TopScore.Location = new System.Drawing.Point(459, 337);
+            this.labelLevel3TopScore.Location = new System.Drawing.Point(435, 322);
             this.labelLevel3TopScore.Name = "labelLevel3TopScore";
             this.labelLevel3TopScore.Size = new System.Drawing.Size(177, 25);
             this.labelLevel3TopScore.TabIndex = 6;
-            this.labelLevel3TopScore.Text = "Level 2 top score";
+            this.labelLevel3TopScore.Text = "Level 3 top score";
             // 
             // label2
             // 
@@ -127,19 +132,49 @@ namespace MatchingPairsGame
             // 
             // buttonLogOut
             // 
-            this.buttonLogOut.Location = new System.Drawing.Point(464, 12);
+            this.buttonLogOut.Location = new System.Drawing.Point(640, 12);
             this.buttonLogOut.Name = "buttonLogOut";
-            this.buttonLogOut.Size = new System.Drawing.Size(230, 35);
+            this.buttonLogOut.Size = new System.Drawing.Size(111, 46);
             this.buttonLogOut.TabIndex = 9;
             this.buttonLogOut.Text = "Log out";
             this.buttonLogOut.UseVisualStyleBackColor = true;
             this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
             // 
+            // labelLevel1TopScoreValue
+            // 
+            this.labelLevel1TopScoreValue.AutoSize = true;
+            this.labelLevel1TopScoreValue.Location = new System.Drawing.Point(435, 141);
+            this.labelLevel1TopScoreValue.Name = "labelLevel1TopScoreValue";
+            this.labelLevel1TopScoreValue.Size = new System.Drawing.Size(133, 25);
+            this.labelLevel1TopScoreValue.TabIndex = 10;
+            this.labelLevel1TopScoreValue.Text = "No score yet";
+            // 
+            // labelLevel2TopScoreValue
+            // 
+            this.labelLevel2TopScoreValue.AutoSize = true;
+            this.labelLevel2TopScoreValue.Location = new System.Drawing.Point(435, 246);
+            this.labelLevel2TopScoreValue.Name = "labelLevel2TopScoreValue";
+            this.labelLevel2TopScoreValue.Size = new System.Drawing.Size(133, 25);
+            this.labelLevel2TopScoreValue.TabIndex = 11;
+            this.labelLevel2TopScoreValue.Text = "No score yet";
+            // 
+            // labelLevel3TopScoreValue
+            // 
+            this.labelLevel3TopScoreValue.AutoSize = true;
+            this.labelLevel3TopScoreValue.Location = new System.Drawing.Point(435, 350);
+            this.labelLevel3TopScoreValue.Name = "labelLevel3TopScoreValue";
+            this.labelLevel3TopScoreValue.Size = new System.Drawing.Size(133, 25);
+            this.labelLevel3TopScoreValue.TabIndex = 12;
+            this.labelLevel3TopScoreValue.Text = "No score yet";
+            // 
             // LevelSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 450);
+            this.ClientSize = new System.Drawing.Size(763, 450);
+            this.Controls.Add(this.labelLevel3TopScoreValue);
+            this.Controls.Add(this.labelLevel2TopScoreValue);
+            this.Controls.Add(this.labelLevel1TopScoreValue);
             this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.LableUserName);
             this.Controls.Add(this.label2);
@@ -150,9 +185,12 @@ namespace MatchingPairsGame
             this.Controls.Add(this.buttonLevel3);
             this.Controls.Add(this.buttonLevel2);
             this.Controls.Add(this.buttonLevel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "LevelSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matching Pairs Game Level Selector";
+            this.VisibleChanged += new System.EventHandler(this.LevelSelector_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +208,8 @@ namespace MatchingPairsGame
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LableUserName;
         private System.Windows.Forms.Button buttonLogOut;
+        private System.Windows.Forms.Label labelLevel1TopScoreValue;
+        private System.Windows.Forms.Label labelLevel2TopScoreValue;
+        private System.Windows.Forms.Label labelLevel3TopScoreValue;
     }
 }

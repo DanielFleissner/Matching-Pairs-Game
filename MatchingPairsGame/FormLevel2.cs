@@ -12,7 +12,7 @@ namespace MatchingPairsGame
 {
     public partial class FormLevel2 : System.Windows.Forms.Form
     {
-        public FormLevel2()
+        public FormLevel2(Profiles profiles, Profiles.Profile profile)
         {
             InitializeComponent();
             List<string> icons = new List<string>()
@@ -20,7 +20,7 @@ namespace MatchingPairsGame
                 "!", "!","!", "N", "N","N",",", ",", ",", "k", "k","k",
                 "b", "b", "b", "v", "v", "v", "w", "w", "w", "z", "z", "z", "a", "a", "a", "c", "c", "c", "d", "d", "d", "e", "e", "e"
             };
-            new GameEngine(this, components, icons, 3);
+            new GameEngine(this, components, icons, 3, profiles, profile, profile.highScores.level2);
         }
     }
 }

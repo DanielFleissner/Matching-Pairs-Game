@@ -49,7 +49,7 @@ namespace MatchingPairsGame
                 public Level2 level2 = new Level2();
 
                 public Level3 level3 = new Level3();
-                public void Update(LevelPeformanceSpecs level, int turns, int time)
+                public void Update(LevelPeformanceSpecs level, int turns, TimeSpan time)
                 {
                     level.Turns = turns;
                     level.Time = time;
@@ -73,14 +73,14 @@ namespace MatchingPairsGame
     }
     public class LevelPeformanceSpecs
     {
-        public int Turns = 0;
-        public int Time = 0;
+        public int Turns;
+        public TimeSpan Time;
     }
 
     class JsonMethods
     {
-        static string path = "D:/Documents/Study/Software Study/C#/MatchingPairsGame/Profiles.txt";
-
+        static string pathExe = System.Reflection.Assembly.GetEntryAssembly().Location;
+        static string path = new FileInfo(pathExe).Directory.FullName + "\\Profiles.txt";
         public static Profiles Profiles()
         {
             Profiles profiles;

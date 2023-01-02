@@ -33,8 +33,15 @@ namespace MatchingPairsGame
         Timer timerPeak = new Timer();
         Label labelPeak;
         bool spaceBarPressed = false;
-        public GameEngine(Form gameForm, System.ComponentModel.IContainer components, List<string> icons, int numberOfLabelsToMatch)
+        Profiles profiles;
+        Profiles.Profile profile;
+        LevelPeformanceSpecs level;
+
+        public GameEngine(Form gameForm, System.ComponentModel.IContainer components, List<string> icons, int numberOfLabelsToMatch, Profiles profiles, Profiles.Profile profile, LevelPeformanceSpecs level)
         {
+            this.profiles = profiles;
+            this.profile = profile;
+            this.level = level;
             this.gameForm = gameForm;
             this.icons = icons;
             Control.ControlCollection controls = gameForm.Controls;
@@ -171,9 +178,14 @@ namespace MatchingPairsGame
                 if (iconLabel.ForeColor == iconLabel.BackColor)
                     return;
             }
-
             timerGame.Stop();
             MessageBox.Show("You matched all the icons!", "Congratulations!");
+            //only update turn count if it is less than the previous highscore.
+            if (level.Turns == 0 || level.Turns > turnCount || level.Turns == turnCount && level.Time > gameTime)
+            {
+                profile.highScores.Update(level, turnCount, gameTime);
+            }
+            JsonMethods.UpdateSaveFile(profiles);
             gameForm.Close();
         }
 

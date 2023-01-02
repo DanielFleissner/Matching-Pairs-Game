@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace MatchingPairsGame
 {
-    public partial class CreateAccount : Form
+    public partial class CreateProfile : Form
     {
         Profiles profiles;
-        public CreateAccount(Profiles profiles)
+        public CreateProfile(Profiles profiles)
         {
             InitializeComponent();
             this.profiles = profiles;
@@ -23,7 +23,7 @@ namespace MatchingPairsGame
             }
         }
 
-        private void buttonCreateAccount_Click(object sender, EventArgs e)
+        private void buttonCreateProfile_Click(object sender, EventArgs e)
         {
             string name = textBoxUserName.Text;
             if (name != "")

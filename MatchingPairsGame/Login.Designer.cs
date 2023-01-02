@@ -29,32 +29,32 @@ namespace MatchingPairsGame
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonNewCreateAccount = new System.Windows.Forms.Button();
-            this.comboBoxSelectAccount = new System.Windows.Forms.ComboBox();
+            this.buttonCreateNewProfile = new System.Windows.Forms.Button();
+            this.comboBoxSelectProfile = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
-            this.buttonDeleteAccount = new System.Windows.Forms.Button();
+            this.buttonDeleteProfile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // buttonNewCreateAccount
+            // buttonCreateNewProfile
             // 
-            this.buttonNewCreateAccount.Location = new System.Drawing.Point(153, 302);
-            this.buttonNewCreateAccount.Name = "buttonNewCreateAccount";
-            this.buttonNewCreateAccount.Size = new System.Drawing.Size(253, 67);
-            this.buttonNewCreateAccount.TabIndex = 0;
-            this.buttonNewCreateAccount.Text = "Create new account";
-            this.buttonNewCreateAccount.UseVisualStyleBackColor = true;
-            this.buttonNewCreateAccount.Click += new System.EventHandler(this.buttonNewCreateAccount_Click);
+            this.buttonCreateNewProfile.Location = new System.Drawing.Point(153, 302);
+            this.buttonCreateNewProfile.Name = "buttonCreateNewProfile";
+            this.buttonCreateNewProfile.Size = new System.Drawing.Size(253, 67);
+            this.buttonCreateNewProfile.TabIndex = 0;
+            this.buttonCreateNewProfile.Text = "Create new profile";
+            this.buttonCreateNewProfile.UseVisualStyleBackColor = true;
+            this.buttonCreateNewProfile.Click += new System.EventHandler(this.buttonCreateNewProfile_Click);
             // 
-            // comboBoxSelectAccount
+            // comboBoxSelectProfile
             // 
-            this.comboBoxSelectAccount.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBoxSelectAccount.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxSelectAccount.FormattingEnabled = true;
-            this.comboBoxSelectAccount.Location = new System.Drawing.Point(448, 111);
-            this.comboBoxSelectAccount.Name = "comboBoxSelectAccount";
-            this.comboBoxSelectAccount.Size = new System.Drawing.Size(121, 33);
-            this.comboBoxSelectAccount.TabIndex = 1;
+            this.comboBoxSelectProfile.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxSelectProfile.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxSelectProfile.FormattingEnabled = true;
+            this.comboBoxSelectProfile.Location = new System.Drawing.Point(448, 111);
+            this.comboBoxSelectProfile.Name = "comboBoxSelectProfile";
+            this.comboBoxSelectProfile.Size = new System.Drawing.Size(121, 33);
+            this.comboBoxSelectProfile.TabIndex = 1;
             // 
             // label1
             // 
@@ -75,29 +75,32 @@ namespace MatchingPairsGame
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
-            // buttonDeleteAccount
+            // buttonDeleteProfile
             // 
-            this.buttonDeleteAccount.BackColor = System.Drawing.Color.Red;
-            this.buttonDeleteAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDeleteAccount.ForeColor = System.Drawing.Color.White;
-            this.buttonDeleteAccount.Location = new System.Drawing.Point(413, 203);
-            this.buttonDeleteAccount.Name = "buttonDeleteAccount";
-            this.buttonDeleteAccount.Size = new System.Drawing.Size(190, 60);
-            this.buttonDeleteAccount.TabIndex = 4;
-            this.buttonDeleteAccount.Text = "Delete Account";
-            this.buttonDeleteAccount.UseVisualStyleBackColor = false;
+            this.buttonDeleteProfile.BackColor = System.Drawing.Color.Red;
+            this.buttonDeleteProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeleteProfile.ForeColor = System.Drawing.Color.White;
+            this.buttonDeleteProfile.Location = new System.Drawing.Point(413, 203);
+            this.buttonDeleteProfile.Name = "buttonDeleteProfile";
+            this.buttonDeleteProfile.Size = new System.Drawing.Size(190, 60);
+            this.buttonDeleteProfile.TabIndex = 4;
+            this.buttonDeleteProfile.Text = "Delete Profile";
+            this.buttonDeleteProfile.UseVisualStyleBackColor = false;
+            this.buttonDeleteProfile.Click += new System.EventHandler(this.buttonDeleteProfile_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonDeleteAccount);
+            this.Controls.Add(this.buttonDeleteProfile);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBoxSelectAccount);
-            this.Controls.Add(this.buttonNewCreateAccount);
+            this.Controls.Add(this.comboBoxSelectProfile);
+            this.Controls.Add(this.buttonCreateNewProfile);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -106,10 +109,10 @@ namespace MatchingPairsGame
 
         #endregion
 
-        private System.Windows.Forms.Button buttonNewCreateAccount;
-        private System.Windows.Forms.ComboBox comboBoxSelectAccount;
+        private System.Windows.Forms.Button buttonCreateNewProfile;
+        private System.Windows.Forms.ComboBox comboBoxSelectProfile;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Button buttonDeleteAccount;
+        private System.Windows.Forms.Button buttonDeleteProfile;
     }
 }
