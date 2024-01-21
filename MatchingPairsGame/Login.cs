@@ -8,16 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.ObjectModel;
+using static MatchingPairsGame.GlobalProfiles;
 
 namespace MatchingPairsGame
 {
     public partial class Login : Form
     {
-        Profiles profiles;
-        public Login(Profiles profiles)
+        
+        public Login()
         {
             InitializeComponent();
-            this.profiles = profiles;
+            
             foreach (Profiles.Profile profile in profiles.ProfileList)
             {
                 comboBoxSelectProfile.Items.Add(profile.Name);
@@ -26,7 +27,6 @@ namespace MatchingPairsGame
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Profiles.Profile profile;
             
             if (comboBoxSelectProfile.SelectedItem == null)
             {
@@ -43,15 +43,14 @@ namespace MatchingPairsGame
             {   
                 string name = (string)comboBoxSelectProfile.SelectedItem;
                 profile = profiles.Find(name);
-                this.Hide();
-                new LevelSelector(profiles, profile).ShowDialog();
+                OpenForms.formToOpenNext = "LevelSelector";
                 this.Close();
+                this.Dispose();
             }
         }
 
         private void buttonDeleteProfile_Click(object sender, EventArgs e)
         {
-            Profiles.Profile profile;
 
             if (comboBoxSelectProfile.SelectedItem == null)
             {
@@ -81,9 +80,9 @@ namespace MatchingPairsGame
 
         private void buttonCreateNewProfile_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new CreateProfile(profiles).ShowDialog();
+            OpenForms.formToOpenNext = "CreateProfile";
             this.Close();
+            this.Dispose();
         }
     }
 }

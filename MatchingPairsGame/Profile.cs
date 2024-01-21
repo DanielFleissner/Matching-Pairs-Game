@@ -8,6 +8,11 @@ using Newtonsoft.Json;
 
 namespace MatchingPairsGame
 {   
+    public static class GlobalProfiles
+    {
+        public static Profiles profiles = JsonMethods.Profiles();
+        public static Profiles.Profile profile;
+    }
     public class Profiles
     {
         public List<Profile> ProfileList = new List<Profile>();
@@ -32,24 +37,23 @@ namespace MatchingPairsGame
             return ProfileList.Find(x => x.Name == name);
         }
 
-        public class Profile
+        public  class Profile
         {
-            
-            public string Name;
+            public  string Name;
 
-            public HighScores highScores = new HighScores();
-            public Profile(string name)
+            public  HighScores highScores = new HighScores();
+            public  Profile(string name)
             {
                 Name = name;
             }
-            public class HighScores
+            public  class HighScores
             {
-                public Level1 level1 = new Level1();
+                public  Level1 level1 = new Level1();
 
-                public Level2 level2 = new Level2();
+                public  Level2 level2 = new Level2();
 
-                public Level3 level3 = new Level3();
-                public void Update(LevelPeformanceSpecs level, int turns, TimeSpan time)
+                public  Level3 level3 = new Level3();
+                public  void Update(LevelPeformanceSpecs level, int turns, TimeSpan time)
                 {
                     level.Turns = turns;
                     level.Time = time;
@@ -77,7 +81,7 @@ namespace MatchingPairsGame
         public TimeSpan Time;
     }
 
-    class JsonMethods
+    public static class JsonMethods
     {
         static string pathExe = System.Reflection.Assembly.GetEntryAssembly().Location;
         static string path = new FileInfo(pathExe).Directory.FullName + "\\Profiles.txt";

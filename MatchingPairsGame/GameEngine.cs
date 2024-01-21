@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using static MatchingPairsGame.GlobalProfiles;
 
 namespace MatchingPairsGame
 {
@@ -12,7 +13,7 @@ namespace MatchingPairsGame
     {
         Label[] clickedLabels;
         int keypressCounterWin = 0;
-        int keypressCounterPeak = 0;
+        int keypressCounterPeek = 0;
         Random random = new Random();
         int labelCount;
         Color[] originalColorStates;
@@ -30,17 +31,13 @@ namespace MatchingPairsGame
         Label labelGameTime;
         List<string> icons;
         int numberOfLabelsToMatch;
-        Timer timerPeak = new Timer();
-        Label labelPeak;
-        bool spaceBarPressed = false;
-        Profiles profiles;
-        Profiles.Profile profile;
+        Timer timerPeek = new Timer();
+        Label labelPeek;
+        
         LevelPeformanceSpecs level;
 
-        public GameEngine(Form gameForm, System.ComponentModel.IContainer components, List<string> icons, int numberOfLabelsToMatch, Profiles profiles, Profiles.Profile profile, LevelPeformanceSpecs level)
+        public GameEngine(Form gameForm, System.ComponentModel.IContainer components, List<string> icons, int numberOfLabelsToMatch, LevelPeformanceSpecs level)
         {
-            this.profiles = profiles;
-            this.profile = profile;
             this.level = level;
             this.gameForm = gameForm;
             this.icons = icons;
@@ -50,8 +47,8 @@ namespace MatchingPairsGame
             labelGameTime = (Label)controls["labelGameTime"];
             timer1 = (Timer)components.Components[0];
             timerGame = (Timer)components.Components[1];
-            timerPeak.Interval = 3000;
-            timerPeak.Tick += new System.EventHandler(TimerPeak_Tick);
+            timerPeek.Interval = 3000;
+            timerPeek.Tick += new System.EventHandler(TimerPeek_Tick);
 
             labelCount = tableLayoutPanel1.Controls.Count;
             originalColorStates = new Color[labelCount];
@@ -63,9 +60,11 @@ namespace MatchingPairsGame
 
             timer1.Tick += new System.EventHandler(Timer1_Tick);
             timerGame.Tick += new System.EventHandler(TimerGame_Tick);
-            labelPeak = (Label)controls["labelPeak"];
-            labelPeak.Click += new System.EventHandler(ButtonPeak_Click);
+            labelPeek = (Label)controls["labelPeek"];
+            labelPeek.Click += new System.EventHandler(ButtonPeek_Click);
             gameForm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(Form_KeyPress);
+            gameForm.FormClosing += new FormClosingEventHandler(FormClosing_Event);
+            gameForm.FormClosed += new FormClosedEventHandler(FormClosed_Event);
 
             foreach (Label iconLabel in tableLayoutPanel1.Controls)
             {
@@ -74,6 +73,15 @@ namespace MatchingPairsGame
             AssignIconsToSquares();
         }
 
+        private void FormClosing_Event(object sender, FormClosingEventArgs e)
+        {
+            OpenForms.formToOpenNext = "LevelSelector";     
+        }
+        private void FormClosed_Event(object sender, FormClosedEventArgs e)
+        {
+            gameForm.Dispose();
+        }
+        
         public void AssignIconsToSquares()
         {
             foreach (Label iconLabel in tableLayoutPanel1.Controls)
@@ -85,13 +93,11 @@ namespace MatchingPairsGame
             }
         }
 
-        void ButtonPeak_Click(object sender, EventArgs e)
+        void ButtonPeek_Click(object sender, EventArgs e)
         {
-            if (!spaceBarPressed)
-            { 
-                Peak(); 
-            }
-            spaceBarPressed = false;   
+            
+            Peek(); 
+   
         }
 
         void Label_click(object sender, EventArgs e)
@@ -101,7 +107,7 @@ namespace MatchingPairsGame
                 timerGame.Start();
             }
 
-            if (timerPeak.Enabled)
+            if (timerPeek.Enabled)
             {
                 ReapplyColors();
             }
@@ -186,6 +192,7 @@ namespace MatchingPairsGame
                 profile.highScores.Update(level, turnCount, gameTime);
             }
             JsonMethods.UpdateSaveFile(profiles);
+            OpenForms.formToOpenNext = "LevelSelector";
             gameForm.Close();
         }
 
@@ -199,7 +206,7 @@ namespace MatchingPairsGame
             }
         }
 
-        public void SetIconPeakColors()
+        public void SetIconPeekColors()
         {
             for (int i = 0; i < tableLayoutPanel1.Controls.Count; i++)
             {
@@ -217,18 +224,14 @@ namespace MatchingPairsGame
         }
 
         void Form_KeyPress(object sender, KeyPressEventArgs e)
-          {
-            if (timerPeak.Enabled)
+        {
+            if (timerPeek.Enabled)
             {
                 ReapplyColors();
             }
             char pressedKey = e.KeyChar;
-            if (pressedKey == ' ')
-            {
-                spaceBarPressed = true;
-            }
             CheatPhraseTest(pressedKey, "win", ref keypressCounterWin);
-            CheatPhraseTest(pressedKey, "peak", ref keypressCounterPeak);
+            CheatPhraseTest(pressedKey, "peek", ref keypressCounterPeek);
         }
 
         public void CheatPhraseTest(char pressedkey, string testPhrase, ref int keypressCounter)
@@ -256,26 +259,26 @@ namespace MatchingPairsGame
                     SetAllIconsToBlack();
                     CheckForWinner();
                     break;
-                case "peak":
-                    Peak();
+                case "peek":
+                    Peek();
                     break;
             }
         }
 
-        void Peak()
+        void Peek()
         {
-            if (!timerPeak.Enabled)
+            if (!timerPeek.Enabled)
             {
-                RecordPanelStateBeforePeak();
-                SetIconPeakColors();
-                timerPeak.Start();
-                //plus 5 to turn count as peak penalty
+                RecordPanelStateBeforePeek();
+                SetIconPeekColors();
+                timerPeek.Start();
+                //plus 5 to turn count as peek penalty
                 turnCount += 5;
                 labelTurnCount.Text = turnCount.ToString();
             }
         }
 
-        public void RecordPanelStateBeforePeak()
+        public void RecordPanelStateBeforePeek()
         {
             for (int i = 0; i < tableLayoutPanel1.Controls.Count; i++)
             {
@@ -293,7 +296,7 @@ namespace MatchingPairsGame
                 Label iconLabel = (Label)control;
                 iconLabel.ForeColor = originalColorStates[i];
             }
-            timerPeak.Stop();
+            timerPeek.Stop();
         }
 
         public void TimerGame_Tick(object sender, EventArgs e)
@@ -302,9 +305,9 @@ namespace MatchingPairsGame
             labelGameTime.Text = gameTime.ToString();
         }
 
-        void TimerPeak_Tick(object sender, EventArgs e)
+        void TimerPeek_Tick(object sender, EventArgs e)
         {
-            timerPeak.Stop();
+            timerPeek.Stop();
             ReapplyColors();
         }
     }

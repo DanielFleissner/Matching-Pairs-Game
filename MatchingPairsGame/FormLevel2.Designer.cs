@@ -33,7 +33,7 @@ namespace MatchingPairsGame
             this.label18 = new System.Windows.Forms.Label();
             this.labelTurnCount = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.labelPeak = new System.Windows.Forms.Label();
+            this.labelPeek = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
@@ -138,19 +138,19 @@ namespace MatchingPairsGame
             this.label39.TabIndex = 6;
             this.label39.Text = "Peek Penalty = 5 Turns";
             // 
-            // labelPeak
+            // labelPeek
             // 
-            this.labelPeak.AutoSize = true;
-            this.labelPeak.BackColor = System.Drawing.Color.Yellow;
-            this.labelPeak.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelPeak.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPeak.Location = new System.Drawing.Point(1721, 5);
-            this.labelPeak.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelPeak.Name = "labelPeak";
-            this.labelPeak.Size = new System.Drawing.Size(113, 48);
-            this.labelPeak.TabIndex = 7;
-            this.labelPeak.Text = "Peek";
-            this.labelPeak.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelPeek.AutoSize = true;
+            this.labelPeek.BackColor = System.Drawing.Color.Yellow;
+            this.labelPeek.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelPeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPeek.Location = new System.Drawing.Point(1721, 5);
+            this.labelPeek.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPeek.Name = "labelPeek";
+            this.labelPeek.Size = new System.Drawing.Size(113, 48);
+            this.labelPeek.TabIndex = 7;
+            this.labelPeek.Text = "Peek";
+            this.labelPeek.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -690,7 +690,7 @@ namespace MatchingPairsGame
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1821, 1883);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.labelPeak);
+            this.Controls.Add(this.labelPeek);
             this.Controls.Add(this.label39);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.labelTurnCount);
@@ -717,7 +717,7 @@ namespace MatchingPairsGame
         public System.Windows.Forms.Label labelTurnCount;
         private System.Windows.Forms.Label label39;
         private System.ComponentModel.IContainer components;
-        private System.Windows.Forms.Label labelPeak;
+        private System.Windows.Forms.Label labelPeek;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public System.Windows.Forms.Label label38;
         public System.Windows.Forms.Label label37;

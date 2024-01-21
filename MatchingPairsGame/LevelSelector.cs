@@ -7,21 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MatchingPairsGame.GlobalProfiles;
 
 namespace MatchingPairsGame
 {
     public partial class LevelSelector : Form
     {
-        Profiles profiles;
-        Profiles.Profile profile; 
-        public LevelSelector(Profiles profiles, Profiles.Profile profile)
+
+        public LevelSelector()
         {
             InitializeComponent();
-            this.profiles = profiles;
-            this.profile = profile;
-            LableUserName.Text = profile.Name;
+            LableUserName.Text = profile.Name;        
         }
-
+        
         private string HighScoreToString (int level)
         {
             LevelPeformanceSpecs Level;
@@ -59,30 +57,30 @@ namespace MatchingPairsGame
 
         private void ButtonLevel1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new FormLevel1(profiles, profile).ShowDialog();
-            this.Show();
+            OpenForms.formToOpenNext = "FormLevel1";  
+            this.Close();
+            this.Dispose();
         }
 
         private void ButtonLevel2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new FormLevel2(profiles, profile).ShowDialog();
-            this.Show();
+            OpenForms.formToOpenNext = "FormLevel2";
+            this.Close();
+            this.Dispose();
         }
 
         private void ButtonLevel3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new FormLevel3(profiles, profile).ShowDialog();
-            this.Show();
+            OpenForms.formToOpenNext = "FormLevel3";
+            this.Close();
+            this.Dispose();
         }
 
         private void buttonLogOut_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            OpenForms.formToOpenNext = "Login";
             this.Close();
-            new Login(profiles).ShowDialog();
+            this.Dispose();
         }
 
         private void LevelSelector_VisibleChanged(object sender, EventArgs e)

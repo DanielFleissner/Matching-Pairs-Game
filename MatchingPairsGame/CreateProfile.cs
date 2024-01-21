@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MatchingPairsGame.GlobalProfiles;
 
 namespace MatchingPairsGame
 {
     public partial class CreateProfile : Form
     {
-        Profiles profiles;
-        public CreateProfile(Profiles profiles)
+        public CreateProfile()
         {
             InitializeComponent();
-            this.profiles = profiles;
-            if (profiles.ProfileList.Count == 0)
+            
+            if (profiles.ProfileList.Count() == 0)
             {
                 buttonReturnToLoginWindow.Visible = false;
             }
@@ -36,12 +36,12 @@ namespace MatchingPairsGame
                 }
                 else
                 {
-                    Profiles.Profile profile = new Profiles.Profile(name);
+                    profile = new Profiles.Profile(name);
                     profiles.Add(profile);
                     JsonMethods.UpdateSaveFile(profiles);
-                    this.Hide();
-                    new LevelSelector(profiles, profile).ShowDialog();
+                    OpenForms.formToOpenNext = "LevelSelector";
                     this.Close();
+                    this.Dispose();
                 }
             }
             else
@@ -52,9 +52,9 @@ namespace MatchingPairsGame
 
         private void buttonReturnToLoginWindow_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Login(profiles).ShowDialog();
+            OpenForms.formToOpenNext = "Login";
             this.Close();
+            this.Dispose();
         }
     }
 }

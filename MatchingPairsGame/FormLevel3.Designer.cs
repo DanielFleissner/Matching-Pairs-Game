@@ -70,7 +70,7 @@ namespace MatchingPairsGame
             this.label18 = new System.Windows.Forms.Label();
             this.labelTurnCount = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.labelPeak = new System.Windows.Forms.Label();
+            this.labelPeek = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +86,7 @@ namespace MatchingPairsGame
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 303F));
             this.tableLayoutPanel1.Controls.Add(this.label38, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label37, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label36, 0, 2);
@@ -133,7 +133,7 @@ namespace MatchingPairsGame
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1821, 1821);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1824, 1821);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label38
@@ -144,7 +144,7 @@ namespace MatchingPairsGame
             this.label38.Location = new System.Drawing.Point(1518, 1215);
             this.label38.Margin = new System.Windows.Forms.Padding(0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(300, 300);
+            this.label38.Size = new System.Drawing.Size(303, 300);
             this.label38.TabIndex = 35;
             this.label38.Text = "c";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -326,7 +326,7 @@ namespace MatchingPairsGame
             this.label24.Location = new System.Drawing.Point(1518, 1518);
             this.label24.Margin = new System.Windows.Forms.Padding(0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(300, 300);
+            this.label24.Size = new System.Drawing.Size(303, 300);
             this.label24.TabIndex = 21;
             this.label24.Text = "c";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -430,7 +430,7 @@ namespace MatchingPairsGame
             this.label14.Location = new System.Drawing.Point(1518, 912);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(300, 300);
+            this.label14.Size = new System.Drawing.Size(303, 300);
             this.label14.TabIndex = 13;
             this.label14.Text = "c";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -456,7 +456,7 @@ namespace MatchingPairsGame
             this.label12.Location = new System.Drawing.Point(1518, 609);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(300, 300);
+            this.label12.Size = new System.Drawing.Size(303, 300);
             this.label12.TabIndex = 11;
             this.label12.Text = "c";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -508,7 +508,7 @@ namespace MatchingPairsGame
             this.label8.Location = new System.Drawing.Point(1518, 306);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(300, 300);
+            this.label8.Size = new System.Drawing.Size(303, 300);
             this.label8.TabIndex = 7;
             this.label8.Text = "c";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -560,7 +560,7 @@ namespace MatchingPairsGame
             this.label4.Location = new System.Drawing.Point(1518, 3);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(300, 300);
+            this.label4.Size = new System.Drawing.Size(303, 300);
             this.label4.TabIndex = 3;
             this.label4.Text = "c";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -668,19 +668,19 @@ namespace MatchingPairsGame
             this.label39.TabIndex = 6;
             this.label39.Text = "Peek Penalty = 5 Turns";
             // 
-            // labelPeak
+            // labelPeek
             // 
-            this.labelPeak.AutoSize = true;
-            this.labelPeak.BackColor = System.Drawing.Color.Yellow;
-            this.labelPeak.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelPeak.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPeak.Location = new System.Drawing.Point(1721, 5);
-            this.labelPeak.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelPeak.Name = "labelPeak";
-            this.labelPeak.Size = new System.Drawing.Size(113, 48);
-            this.labelPeak.TabIndex = 8;
-            this.labelPeak.Text = "Peek";
-            this.labelPeak.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelPeek.AutoSize = true;
+            this.labelPeek.BackColor = System.Drawing.Color.Yellow;
+            this.labelPeek.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelPeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPeek.Location = new System.Drawing.Point(1721, 5);
+            this.labelPeek.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPeek.Name = "labelPeek";
+            this.labelPeek.Size = new System.Drawing.Size(113, 48);
+            this.labelPeek.TabIndex = 8;
+            this.labelPeek.Text = "Peek";
+            this.labelPeek.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormLevel3
             // 
@@ -691,7 +691,7 @@ namespace MatchingPairsGame
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1821, 1883);
-            this.Controls.Add(this.labelPeak);
+            this.Controls.Add(this.labelPeek);
             this.Controls.Add(this.label39);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.labelTurnCount);
@@ -757,7 +757,7 @@ namespace MatchingPairsGame
         public System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label39;
         private System.ComponentModel.IContainer components;
-        private System.Windows.Forms.Label labelPeak;
+        private System.Windows.Forms.Label labelPeek;
     }
 }
 
